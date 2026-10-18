@@ -1,20 +1,11 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+A priority encoder selects the lowest-numbered active input (0 if none are active). A lookup table converts that index into the ASCII code of its decimal character (e.g. input 1 -> code 49). Since the ASCII code has two decimal digits but there is only one seven-segment display, a counter driven by clk alternates between showing the tens digit and the ones digit a few times per second.
 
 ## How to test
 
-Explain how to use your project
+Drive one of ui[0] to ui[7] high. The display should alternate between the tens and ones digit of 48 plus the input number (e.g. ui[0] high shows 4 then 9, i.e. 49). With no input active, it shows 48 (4 then 8). If more than one input is active, the lowest-numbered one wins.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+A common-cathode seven-segment display on uo[0] to uo[6], with a resistor on each segment.

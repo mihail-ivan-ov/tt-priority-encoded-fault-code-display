@@ -1,17 +1,17 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
+  title:        "Priority-encoded ASCII code display"      # Project title
+  author:       "Mihails Ivanovs"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "Eight input lines act as fault/request signals. The lowest-numbered active one is selected by a priority encoder, converted to its ASCII code, and shown as a two-digit decimal number on a single seven-segment display by time-division multiplexing."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_mihail_ivan_ov_priority_encoded_fault_code_display"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -23,27 +23,27 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "request line 1 (highest priority)"
+  ui[1]: "request line 2"
+  ui[2]: "request line 3"
+  ui[3]: "request line 4"
+  ui[4]: "request line 5"
+  ui[5]: "request line 6"
+  ui[6]: "request line 7"
+  ui[7]: "request line 8 (lowest priority)"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
+  uo[0]: "segment a"
+  uo[1]: "segment b"
+  uo[2]: "segment c"
+  uo[3]: "segment d"
+  uo[4]: "segment e"
+  uo[5]: "segment f"
+  uo[6]: "segment g"
   uo[7]: ""
 
   # Bidirectional pins
-  uio[0]: ""
+  uio[0]: "1 while the tens digit is shown, 0 while the ones digit is s"
   uio[1]: ""
   uio[2]: ""
   uio[3]: ""
